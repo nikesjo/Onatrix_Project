@@ -1,0 +1,28 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var siteName = settings?.Value<string>("siteName") ?? "";
+    var siteLogotype = settings?.Value<IPublishedContent>("siteLogotype")?.Url() ?? "";
+}
+
+<header>
+    <div class="container">
+        <a id="logo" class="logotype" href="/"><img src="@siteLogotype" alt="@siteName"></a>
+
+        <div id="navbar">
+            <nav class="nav-menu">
+
+            </nav>
+        </div>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        
+        <button id="toggle-mobile-menu" class="btn-menu"><i class="fa-regular fa-bars"></i></button>
+    </div>
+</header>
