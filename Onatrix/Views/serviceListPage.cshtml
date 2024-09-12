@@ -15,6 +15,11 @@
 	var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
 }
 
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
 <section id="our-services">
 	<div class="container">
 		@if (!string.IsNullOrEmpty(Model.Value("customHeadline").ToString())) {
