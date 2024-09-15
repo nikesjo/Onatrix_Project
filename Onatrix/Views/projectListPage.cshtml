@@ -1,0 +1,103 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+	var selection = Umbraco.Content(Guid.Parse("9bed7454-2f0f-4c65-bd72-a3f2d9ddcfac")).ChildrenOfType("projectItemTemplate").Where(x => x.IsVisible());
+	
+	var itemsPerPage = 4;
+
+	if (!int.TryParse(Context.Request.Query["page"], out int currentPage))
+		currentPage = 1;
+
+	var totalItems = selection?.Count() ?? 0;
+	var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
+}
+
+
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+<section class="projects">
+	<div class="container">
+		<div class="project-left">
+			<div class="project-list">
+				<div class="project-thumbnail">
+					<img src="/images/projects/pj1.svg" alt="project thumbnail">
+				</div>
+				<div class="project-content">
+					<h2>Annual Report for Juva Inc.</h3>
+					<p><i class="fa-solid fa-calendar-days"></i>June 15, 2024</p>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
+				</div>
+
+			</div>
+			<div class="project-list">
+				<div class="project-thumbnail">
+					<img src="/images/projects/pj2.svg" alt="project thumbnail">
+				</div>
+				<div class="project-content">
+					<h2>Business Insights for SP Group...</h3>
+					<p><i class="fa-solid fa-calendar-days"></i>May 17, 2024</p>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
+				</div>
+			</div>
+			<div class="project-list">
+				<div class="project-thumbnail">
+					<img src="/images/projects/pj3.svg" alt="project thumbnail">
+				</div>
+				<div class="project-content">
+					<h2>Financial Advisors for Irra Grou...</h3>
+					<p><i class="fa-solid fa-calendar-days"></i>February 6, 2024</p>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
+				</div>
+			</div>
+			<div id="last" class="project-list">
+				<div class="project-thumbnail">
+					<img src="/images/projects/pj4.svg" alt="project thumbnail">
+				</div>
+				<div class="project-content">
+					<h2>Budget Planning for Buccura In...</h3>
+					<p><i class="fa-solid fa-calendar-days"></i>January 3, 2024</p>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
+					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
+				</div>
+			</div>
+
+			<div class="pagination">
+				<a href="#" class="prev disabled">Prev</a>
+				<a href="#" class="page active">1</a>
+				<a href="#" class="page">2</a>
+				<a href="#" class="next">Next</a>
+			</div>
+
+		</div>
+		<div class="project-right">
+			<h2>Tags</h2>
+			<div class="projects-tags">
+				<span class="tag">Report</span>
+				<span class="tag">Business plans</span>
+				<span class="tag">Insights</span>
+				<span class="tag">Business</span>
+				<span class="tag">App</span>
+				<span class="tag">Project</span>
+				<span class="tag">Finance</span>
+				<span class="tag">Pricing</span>
+			</div>
+			<div class="support">
+				<img src="/images/projects/Mail.svg" alt="mail" class="mail-icon">
+				<h3>How can we help you?</h3>
+				<p>Online support 24/7, we are here to help you</p>
+				<div class="email-input">
+					<input type="email" placeholder="Email address">
+					<button type="submit"><i class="fa-regular fa-envelope"></i></button>
+					</div>
+			</div>
+		</div>
+	</div>
+</section>
