@@ -8,7 +8,7 @@
     var officeLocation = settings?.Value<string>("officeLocation") ?? "";
 }
 
-<div id="topbar" class="bg-primary">
+<div class="header-top bg-primary">
     <div class="container">
         <div class="address">@officeLocation</div>
         @await Html.PartialAsync("socialmedia.cshtml")
