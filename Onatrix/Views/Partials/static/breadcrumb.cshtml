@@ -11,17 +11,20 @@
 }
 
 <section class="page-title">
+    <img class="img-1" src="media/g2bfrezf/about-hero.svg" alt="">
+    <img class="img-2" src="media/wuwfnvmu/about-hero-2.svg" alt="">
     <div class="container">
         <h1>@ViewBag.Title</h1>
 
         @if (selection?.Length > 0)
         {
-            <ul class="breadcrumb">               
+            <ul class="breadcrumb">
                 @foreach (var item in selection.OrderBy(x => x.Level))
                 {
                     var displayName = isFirstItem ? homePageDisplayName : item.Name;
-                    <li><a href="@item.Url(PublishedUrlProvider)">@displayName</a></li>
+                    <li><a class="breadcrumb-home" href="@item.Url(PublishedUrlProvider)">@displayName</a></li>
                     isFirstItem = false;
+                    <i class="fa-sharp fa-solid fa-chevron-right"></i>
                 }
 
                 <li class="active">@Model.Name</li>

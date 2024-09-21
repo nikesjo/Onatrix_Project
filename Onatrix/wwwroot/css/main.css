@@ -467,45 +467,51 @@ form .content input::placeholder, form .content textarea::placeholder {
     }
 }
 
-.about-hero {
+.page-title {
   position: relative;
-  background-color: var(--color-gray);
+  background-color: #F7F7F7;
+  z-index: -1;
 }
-.about-hero .img-1 {
+.page-title .img-1 {
   display: none;
   position: absolute;
   bottom: 0;
+  z-index: 1;
 }
 @media (min-width: 1400px) {
-  .about-hero .img-1 {
+  .page-title .img-1 {
     display: block;
   }
 }
-.about-hero .img-2 {
+.page-title .img-2 {
   display: none;
   position: absolute;
   right: 0;
+  z-index: 1;
 }
 @media (min-width: 1400px) {
-  .about-hero .img-2 {
+  .page-title .img-2 {
     display: block;
   }
 }
-.about-hero .container {
+.page-title .container {
   text-align: center;
   padding-top: 60px;
   padding-bottom: 80px;
 }
-.about-hero .container .breadcrumb {
+.page-title .container .breadcrumb {
   font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.about-hero .container .breadcrumb .breadcrumb-home {
-  color: var(--color-primary);
+.page-title .container .breadcrumb .breadcrumb-home {
+  color: #4F5955;
 }
-.about-hero .container .breadcrumb i {
+.page-title .container .breadcrumb .active {
+  color: #D9C3A9;
+}
+.page-title .container .breadcrumb i {
   font-size: 10px;
   padding: 0 10px;
 }
