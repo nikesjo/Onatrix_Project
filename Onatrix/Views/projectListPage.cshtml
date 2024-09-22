@@ -3,7 +3,9 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
-	var selection = Umbraco.Content(Guid.Parse("9bed7454-2f0f-4c65-bd72-a3f2d9ddcfac")).ChildrenOfType("projectItemTemplate").Where(x => x.IsVisible());
+	var selection = Umbraco.Content(Guid.Parse("8b7ae6a0-7562-4055-b129-4782dd7f9225"))
+    .ChildrenOfType("projectItemTemplate")
+    .Where(x => x.IsVisible());
 	
 	var itemsPerPage = 4;
 
@@ -14,7 +16,6 @@
 	var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
 }
 
-
 @if (!string.IsNullOrEmpty(ViewBag.Title))
 {
     @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
@@ -23,59 +24,55 @@
 <section class="projects">
 	<div class="container">
 		<div class="project-left">
-			<div class="project-list">
-				<div class="project-thumbnail">
-					<img src="/images/projects/pj1.svg" alt="project thumbnail">
-				</div>
-				<div class="project-content">
-					<h2>Annual Report for Juva Inc.</h3>
-					<p><i class="fa-solid fa-calendar-days"></i>June 15, 2024</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
-					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
-				</div>
+		@if (pagedItems != null) 
+		{
+		@foreach (var item in pagedItems) 
+		{
+			var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+			var preamble = item?.Value<string>("preamble") ?? "";
+			var dateUploaded = item?.Value<string>("dateUploaded") ?? "";    
 
-			</div>
-			<div class="project-list">
+			<a class="project-list" href="@item!.Url()">
 				<div class="project-thumbnail">
-					<img src="/images/projects/pj2.svg" alt="project thumbnail">
+					<img src="@image" alt="@item!.Name()">
 				</div>
 				<div class="project-content">
-					<h2>Business Insights for SP Group...</h3>
-					<p><i class="fa-solid fa-calendar-days"></i>May 17, 2024</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
-					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
-				</div>
-			</div>
-			<div class="project-list">
-				<div class="project-thumbnail">
-					<img src="/images/projects/pj3.svg" alt="project thumbnail">
-				</div>
-				<div class="project-content">
-					<h2>Financial Advisors for Irra Grou...</h3>
-					<p><i class="fa-solid fa-calendar-days"></i>February 6, 2024</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
-					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
-				</div>
-			</div>
-			<div id="last" class="project-list">
-				<div class="project-thumbnail">
-					<img src="/images/projects/pj4.svg" alt="project thumbnail">
-				</div>
-				<div class="project-content">
-					<h2>Budget Planning for Buccura In...</h3>
-					<p><i class="fa-solid fa-calendar-days"></i>January 3, 2024</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Sed ut perspiciatis unde omnis iste natus error.</p>
-					<a href="project-details.html">Read More<i class="fa-light fa-arrow-right"></i></a>
-				</div>
-			</div>
-
+					<h4>@item!.Name()</h4>
+					<p><i class="fa-solid fa-calendar-days"></i>@dateUploaded</p>
+					<p>@preamble</p>
+					<p class="read-more">Read More<i class="fa-light fa-arrow-right"></i></p>
+				</div>			
+			</a>
+		}
+		}
 			<div class="pagination">
-				<a href="#" class="prev disabled">Prev</a>
-				<a href="#" class="page active">1</a>
-				<a href="#" class="page">2</a>
-				<a href="#" class="next">Next</a>
-			</div>
+				@if (currentPage > 1) 
+				{
+					<a href="?page=@(currentPage - 1)" class="change">Prev</a>
+				}
+				else
+				{
+					<span class="change inactive">Prev</span>
+				}
 
+				<ul class="pages">
+				@for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
+				{
+					<li class="@((i == currentPage) ? "number active" : "number")">
+						<a href="?page=@i">@i</a>
+					</li>
+				}
+				</ul>
+
+				@if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
+				{
+					<a href="?page=@(currentPage + 1)" class="change">Next</a>
+				}
+				else
+				{
+					<span class="change inactive">Next</span>
+				}
+			</div>
 		</div>
 		<div class="project-right">
 			<h2>Tags</h2>
@@ -90,14 +87,15 @@
 				<span class="tag">Pricing</span>
 			</div>
 			<div class="support">
-				<img src="/images/projects/Mail.svg" alt="mail" class="mail-icon">
+				<img src="/media/0swp2mrt/service-risk-management-letter.svg" alt="mail" class="mail-icon">
 				<h3>How can we help you?</h3>
 				<p>Online support 24/7, we are here to help you</p>
 				<div class="email-input">
 					<input type="email" placeholder="Email address">
 					<button type="submit"><i class="fa-regular fa-envelope"></i></button>
-					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
+@await Html.PartialAsync("partials/static/contactInfo.cshtml")
