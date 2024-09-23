@@ -12,7 +12,85 @@
 
 <section class="project-details">
 	<div class="container">
-		@Model.Value("pageContent")
+		<div class="project-details-left">
+			<div class="content">
+				@Model.Value("pageContent")
+			</div>
+			<div class="tags-bottom">
+				<h6>Tags:</h6>
+				<span class="tag">Business</span>
+				<span class="tag">Consulting</span>
+				<span class="tag">Onatrix</span>
+			</div>
+		</div>
+		<div class="project-details-right">
+			<div class="recent-projects">
+				<h2>Recent Projects</h2>
+				<div class="projects-small">
+					<img src="/images/projects/pj1.svg" alt="">
+					<div class="content">
+						<a href="#"><h6>Annual Report for Juva Inc.</h6></a>
+						<p class="date"><i class="fa-solid fa-calendar-days"></i>June 15, 2024</p>
+					</div>
+				</div>
+				<div class="projects-small">
+					<img src="/images/projects/pj2.svg" alt="">
+					<div class="content">
+						<a href="#"><h6>Business Insights for SP Group Inc.</h6></a>
+						<p class="date"><i class="fa-solid fa-calendar-days"></i>May 17, 2024</p>
+					</div>
+				</div>
+				<div class="projects-small">
+					<img src="/images/projects/pj3.svg" alt="">
+					<div class="content">
+						<a href="#"><h6>Financial Advisors toIrra Group Inc.</h6></a>
+						<p class="date"><i class="fa-solid fa-calendar-days"></i>February 6, 2024</p>
+					</div>
+				</div>
+				<div id="last" class="projects-small">
+					<img src="/images/projects/pj4.svg" alt="">
+					<div class="content">
+						<a href="#"><h6>Budget Planning for Buccura Inc.</h6></a>
+						<p class="date"><i class="fa-solid fa-calendar-days"></i>January 3, 2024</p>
+					</div>
+				</div>
+			</div>
+			<div class="projects-tags">
+				<h2>Tags</h2>
+				<div class="tags">
+				@{
+				if (Model.Value<string[]>("projectTags").Length > 0)
+				{
+					@foreach (var item in Model.Value<string[]>("projectTags"))
+					{
+					<div class="tags">
+						<span class="tag">@item</span>
+					</div>
+					}
+				}
+				}
+				</div>
+				<div class="tags">
+					<span class="tag">Report</span>
+					<span class="tag">Business plans</span>
+					<span class="tag">Insights</span>
+					<span class="tag">Business</span>
+					<span class="tag">App</span>
+					<span class="tag">Project</span>
+					<span class="tag">Finance</span>
+					<span class="tag">Pricing</span>
+				</div>
+			</div>
+			<div class="support">
+				<img src="/media/0swp2mrt/service-risk-management-letter.svg" alt="mail" class="mail-icon">
+				<h3>How can we help you?</h3>
+				<p>Online support 24/7, we are here to help you</p>
+				<div class="email-input">
+					<input class="form-control" type="email" placeholder="E-mail address">
+					<button type="submit"><i class="fa-regular fa-envelope"></i></button>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
