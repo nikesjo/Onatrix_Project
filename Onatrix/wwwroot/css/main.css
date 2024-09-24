@@ -827,7 +827,7 @@ form .content input::placeholder, form .content textarea::placeholder {
   padding-bottom: 30px;
   font-size: 14px;
 }
-.service-details-section .container .service-details-about .support-box {
+/*.service-details-section .container .service-details-about .support-box {
   display: none;
   background-color: var(--color-primary);
   border-radius: 3px;
@@ -880,6 +880,79 @@ form .content input::placeholder, form .content textarea::placeholder {
   bottom: 18px;
   z-index: 2;
   font-size: 20px;
+}*/
+.service-details #support-form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #4F5955;
+    padding: 30px;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+.service-details h5 {
+    color: #F2EDDC;
+    font-size: 22px;
+}
+
+.service-details #support-form p {
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.service-details .container-support {
+    z-index: 1;
+}
+
+.service-details #support-form .form-background-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #4F5955;
+    z-index: 0;
+    height: 120px;
+    width: 160px;
+}
+
+.service-details #support-form .form-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.service-details #support-form .form-input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 3px;
+    border: 1px solid #ebebeb;
+}
+
+.service-details #support-form .form-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.service-details #support-form .form-button i {
+    font-size: 1.2em;
+    color: inherit;
+}
+
+.service-details #support-form .form-input-error {
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.service-details #support-form .sucess-message {
+    color: #F2EDDC;
+    font-weight: bold;
+    font-size: 18px;
 }
 .service-details-section .container .service-details {
   padding: 30px;
@@ -1320,7 +1393,7 @@ form .content input::placeholder, form .content textarea::placeholder {
     color: #9C9EA6;
 }
 
-.project-details .container .project-details-right .support {
+/*.project-details .container .project-details-right .support {
     margin-top: 50px;
     position: relative;
     background-color: #4F5955;
@@ -1390,6 +1463,81 @@ form .content input::placeholder, form .content textarea::placeholder {
 .project-details .container .project-details-right .support .email-input button i {
     font-size: 1.2em;
     color: #333;
+}*/
+.project-details #support-form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #4F5955;
+    padding: 30px;
+    border-radius: 3px;
+    margin-top: 30px;
+    max-width: 300px;
+}
+
+.project-details #support-form h5 {
+    color: #F2EDDC;
+    font-size: 22px;
+}
+
+.project-details #support-form p {
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.project-details #support-form .container-support {
+    z-index: 1;
+
+}
+
+.project-details #support-form .form-background-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #4F5955;
+    z-index: 0;
+    height: 120px;
+    width: 160px;
+}
+
+.project-details #support-form .form-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.project-details #support-form .form-input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 3px;
+    border: 1px solid #ebebeb;
+}
+
+.project-details #support-form .form-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+    .project-details #support-form .form-button i {
+        font-size: 1.2em;
+        color: inherit;
+    }
+
+.project-details #support-form .form-input-error {
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.project-details #support-form .sucess-message {
+    color: #F2EDDC;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .project-details .container .project-details-right .projects-tags h2 {
@@ -1439,3 +1587,12 @@ footer .container {
 footer .container span {
   color: var(--color-secondary);
 }
+span.form-input-error {
+    display: none;
+    color: red;
+}
+
+span.form-input-error.form-invalid-input {
+    display: block;
+}
+ 

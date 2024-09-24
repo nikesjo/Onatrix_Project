@@ -12,6 +12,7 @@
 
 <section class="service-details">
 	<div class="container">
+		@await Html.PartialAsync("partials/static/supportform.cshtml")
 		@Model.Value("pageContent")
 	</div>
 </section>
