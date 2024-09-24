@@ -81,12 +81,12 @@
 			@{
 			if (Model.Value<string[]>("projectTags").Length > 0)
 			{
+				<div class="projects-tags">
 				@foreach (var item in Model.Value<string[]>("projectTags"))
 				{
-				<div class="projects-tags">
 					<span class="tag">@item</span>
+				}					
 				</div>
-				}
 			}
 			}
 			<div class="projects-tags">

@@ -490,8 +490,7 @@ form .content input::placeholder, form .content textarea::placeholder {
 
 .page-title {
     position: relative;
-    background-color: #F7F7F7;
-    
+    background-color: #F7F7F7;    
 }
 .page-title .img-1 {
   display: none;
@@ -1223,8 +1222,15 @@ form .content input::placeholder, form .content textarea::placeholder {
 .project-details .container .project-details-left {
     padding-right: 50px;
 }
-.project-details .container .project-details-left .content {
-    
+/*.project-details .picture-1 {
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    background-color: aqua !important;
+}*/
+.project-details .container .project-details-left .content .picture-1 {
+    display: flex;
 }
 
 .project-details .container .project-details-left .tags-bottom {
@@ -1277,12 +1283,19 @@ form .content input::placeholder, form .content textarea::placeholder {
     }
 }
 
+.project-details .container .project-details-right .recent-projects h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
 .project-details .container .project-details-right .recent-projects .projects-small {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ECECEC;
+    text-decoration: none;
+    color: #4F5955;
 }
 
 .project-details .container .project-details-right .recent-projects .projects-small#last {
@@ -1292,26 +1305,21 @@ form .content input::placeholder, form .content textarea::placeholder {
 .project-details .container .project-details-right .recent-projects .projects-small img {
     width: 130px;
     height: 83px;
-    -o-object-fit: cover;
     object-fit: cover;
     margin-right: 15px;
 }
 
-.project-details .container .project-details-right .recent-projects .projects-small .content a {
-    text-decoration: none;
-}
-
-.project-details .container .project-details-right .recent-projects .projects-small .content a h6 {
+.project-details .container .project-details-right .recent-projects .projects-small .content h6 {
     font-size: 1em;
     font-weight: bold;
-    color: #333;
+    color: #4F5955;
     margin: 0 0 5px 0;
     line-height: 1.4;
 }
-
-.project-details .container .project-details-right .recent-projects .projects-small .content a:hover h6 {
-    color: #D9C3A9;
+.project-details .container .project-details-right .recent-projects .projects-small .content .date {
+    color: #9C9EA6;
 }
+
 .project-details .container .project-details-right .support {
     margin-top: 50px;
     position: relative;
