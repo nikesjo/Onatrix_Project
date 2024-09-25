@@ -1401,7 +1401,6 @@ form .content input::placeholder, form .content textarea::placeholder {
     font-size: 13px;
     color: #4F5955;
     font-weight: 400;
-    white-space: nowrap;
 }
 
 .project-details .container .project-details-right {
@@ -1454,6 +1453,7 @@ form .content input::placeholder, form .content textarea::placeholder {
     height: 83px;
     object-fit: cover;
     margin-right: 15px;
+    flex-shrink: 0;
 }
 
 .project-details .container .project-details-right .recent-projects .projects-small .content h6 {
@@ -1465,6 +1465,9 @@ form .content input::placeholder, form .content textarea::placeholder {
 }
 .project-details .container .project-details-right .recent-projects .projects-small .content .date {
     color: #9C9EA6;
+}
+.project-details .container .project-details-right .recent-projects .projects-small .content .date i {
+    padding-right: 5px;
 }
 
 .project-details #support-form {
