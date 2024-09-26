@@ -3,6 +3,9 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var preamble = Model?.Value<string>("preamble") ?? "";
+	var image = Model?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
 }
 
 @if (!string.IsNullOrEmpty(ViewBag.Title))
@@ -12,8 +15,20 @@
 
 <section class="service-details">
 	<div class="container">
-		@await Html.PartialAsync("partials/static/supportform.cshtml")
-		@Model.Value("pageContent")
+		<div class="left-side">
+			<h4>About us</h4>
+			<img src="@image" alt="@Model?.Name">
+			<p>@preamble</p>
+			@await Html.PartialAsync("partials/static/supportForm.cshtml")
+		</div>
+		<div class="right-side">
+			@Model.Value("pageContent")
+		</div>
 	</div>
 </section>
+
+<section class="question-form">
+	@await Html.PartialAsync("partials/static/questionForm.cshtml")
+</section>
+
 @await Html.PartialAsync("partials/static/contactInfo.cshtml")

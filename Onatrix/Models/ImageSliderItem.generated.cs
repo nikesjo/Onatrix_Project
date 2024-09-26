@@ -50,6 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Additional Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("additionalDescription")]
+		public virtual string AdditionalDescription => this.Value<string>(_publishedValueFallback, "additionalDescription");
+
+		///<summary>
 		/// Image Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -64,6 +72,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("imageLinkUrl")]
 		public virtual string ImageLinkUrl => this.Value<string>(_publishedValueFallback, "imageLinkUrl");
+
+		///<summary>
+		/// Image Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("imageTitle")]
+		public virtual string ImageTitle => this.Value<string>(_publishedValueFallback, "imageTitle");
 
 		///<summary>
 		/// Link Is External

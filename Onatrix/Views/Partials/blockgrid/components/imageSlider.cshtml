@@ -14,6 +14,8 @@
             var imageDescription = item?.Content.Value<string>("imageDescription") ?? "";
             var imageLinkUrl = item?.Content.Value<string>("imageLinkUrl") ?? null;
             var linkIsExternal = item.Content.Value<bool>("linkIsExternal");
+            var imageTitle = item?.Content.Value<string>("imageTitle") ?? "";
+            var additionalDescription = item?.Content.Value<string>("additionalDescription") ?? "";
 
             if(!string.IsNullOrEmpty(imageLinkUrl))
             {
@@ -28,7 +30,17 @@
             }
             else
             {
-                <span class="slide-item"><img src="@selectedImage" alt="@imageDescription"></span>
+                <span class="slide-item">
+                    <img src="@selectedImage" alt="@imageDescription">
+                    @if (!string.IsNullOrEmpty(imageTitle))
+                    {
+                        <h6>@imageTitle</h6>
+                    }
+                    @if (!string.IsNullOrEmpty(additionalDescription))
+                    {
+                        <p>@additionalDescription</p>
+                    }
+                </span>
             }
         }
     </div>

@@ -23,8 +23,8 @@
 <section id="our-services">
 	<div class="container">
 		@if (!string.IsNullOrEmpty(Model.Value("customHeadline").ToString())) {
-		<div>
-			<h2 class="title">@Model.Value("customHeadline")</h2>
+		<div class="headline">
+			<h2 class="service-title">@Model.Value("customHeadline")</h2>
 		</div>
 		}
 		<div class="services">
@@ -37,13 +37,13 @@
 
 				<a href="@item!.Url()">
 					<div class="item">
-						<div class="header">
+						<div class="header-box">
 							<h4>@item!.Name()</h4>
 						</div>
-						<div class="body">
+						<div class="body-box">
 							<img src="@image" alt="@item!.Name()">
 						</div>
-						<div class="footer">
+						<div class="footer-service">
 							<p>@preamble</p>
 						</div>
 					</div>				
@@ -56,29 +56,29 @@
 			<div class="container">
 				@if (currentPage > 1) 
 				{
-					<a href="?page=@(currentPage - 1)" class="change">PREV</a>
+					<a href="?page=@(currentPage - 1)" class="change">Prev</a>
 				}
 				else
 				{
-					<span class="change inactive">PREV</span>
+					<span class="change inactive">Prev</span>
 				}
 
-				<ul class="pages">
+				<div class="pages">
 				@for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
 				{
 					<li class="@((i == currentPage) ? "number active" : "number")">
 						<a href="?page=@i">@i</a>
 					</li>
 				}
-				</ul>
+				</div>
 
 				@if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
 				{
-					<a href="?page=@(currentPage + 1)" class="change">NEXT</a>
+					<a href="?page=@(currentPage + 1)" class="change">Next</a>
 				}
 				else
 				{
-					<span class="change inactive">NEXT</span>
+					<span class="change inactive">Next</span>
 				}
 			</div>
 		</section>
