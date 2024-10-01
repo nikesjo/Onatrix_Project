@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onatrix", "Onatrix\Onatrix.csproj", "{99F37525-D7C0-4F8C-B1BB-F09D4975705F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailProvider", "EmailProvider\EmailProvider.csproj", "{5F339D47-7857-402A-9439-0A4642ECBE3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{99F37525-D7C0-4F8C-B1BB-F09D4975705F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99F37525-D7C0-4F8C-B1BB-F09D4975705F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99F37525-D7C0-4F8C-B1BB-F09D4975705F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F339D47-7857-402A-9439-0A4642ECBE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F339D47-7857-402A-9439-0A4642ECBE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F339D47-7857-402A-9439-0A4642ECBE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F339D47-7857-402A-9439-0A4642ECBE3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -334,23 +334,7 @@ h6 {
   font-size: 14px;
 }
 
-/*form .content input, form .content textarea {
-  padding: 15px 20px;
-  resize: none;
-  border-radius: 3px;
-  border: 1px solid #ebebeb;
-}
-form .content input::-moz-placeholder, form .content textarea::-moz-placeholder {
-  color: #aaa;
-  font-style: italic;
-  font-size: 13px;
-}
-form .content input::placeholder, form .content textarea::placeholder {
-  color: #aaa;
-  font-style: italic;
-  font-size: 13px;
-}
-*/
+
 .header-top {
     background-color: #4F5955;
 }
@@ -628,29 +612,15 @@ form .content input::placeholder, form .content textarea::placeholder {
     }
 }
 
-/*#about-us #container-form {
-    padding: 20px;
-    background-color: #D9C3A9;
-    height: auto;
-    min-height: 500px;
-    width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to bottom, #4F5955 21%, #FFFFFF 21%);
-    margin: -170px auto 0 auto;
-    transition: box-shadow 0.3s ease;
-    cursor: pointer;
-}*/
-
 #about-us #container-form {
     padding: 20px;
     background-color: #D9C3A9;
     height: auto !important;
     min-height: 500px !important;
     width: 100% !important;
-    max-width: 500px !important;
+    margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background: linear-gradient(to bottom, #4F5955 21%, #FFFFFF 21%);
-    margin: -170px 0 0 0 !important;
     transition: box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -659,21 +629,10 @@ form .content input::placeholder, form .content textarea::placeholder {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 1014px) {
+@media (min-width: 1400px) {
     #about-us #container-form {
-        margin-bottom: 50px;
-    }
-}
-
-@media (max-width: 600px) {
-    #about-us #container-form {
-        width: auto;
-    }
-}
-
-@media (max-width: 1400px) {
-    #about-us #container-form {
-        margin-top: 10px;
+        margin: -170px 0 0 0 !important;
+        max-width: 500px !important;
     }
 }
 
@@ -1335,8 +1294,15 @@ form .content input::placeholder, form .content textarea::placeholder {
     padding-left: 10px;
 }
 
+
 #tina-fox-ceo .umb-block-grid__layout-item[data-element-udi="umb://element/c5f16a74e403486488ba0a0ac5cfd28b"] p {
     padding-top: 20px;
+    font-style: italic;
+}
+
+#tina-fox-ceo .umb-block-grid__layout-item[data-element-udi="umb://element/8a5dd8042ad34b59aee01a09b0c45e08"] p {
+    font-style: italic;
+    font-size: 20px;
 }
 
 @media (max-width: 1400px) {
@@ -1355,7 +1321,6 @@ form .content input::placeholder, form .content textarea::placeholder {
         height: 100%;
     }
 }
-
 
 #kevin-gardner .umb-block-grid__layout-item img[src="/media/0hpcg3ab/kevin-gardner.svg"] {
     width: 100%;
@@ -1491,213 +1456,6 @@ form .content input::placeholder, form .content textarea::placeholder {
     }
 }
 
-
-/*.service-details-hero {
-  position: relative;
-  background-color: var(--color-gray);
-}
-.service-details-hero .img-1 {
-  display: none;
-  position: absolute;
-  bottom: 0;
-}
-@media (min-width: 1400px) {
-  .service-details-hero .img-1 {
-    display: block;
-  }
-}
-.service-details-hero .img-2 {
-  display: none;
-  position: absolute;
-  right: 0;
-}
-@media (min-width: 1400px) {
-  .service-details-hero .img-2 {
-    display: block;
-  }
-}
-.service-details-hero .container {
-  text-align: center;
-  padding-top: 60px;
-  padding-bottom: 80px;
-}
-.service-details-hero .container h2 {
-  font-size: 30px;
-}
-@media (min-width: 768px) {
-  .service-details-hero .container h2 {
-    font-size: 40px;
-  }
-}
-.service-details-hero .container .breadcrumb {
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.service-details-hero .container .breadcrumb .breadcrumb-home {
-  color: var(--color-primary);
-}
-.service-details-hero .container .breadcrumb i {
-  font-size: 10px;
-  padding: 0 10px;
-}
-
-@media (min-width: 1400px) {
-  .service-details-section .container {
-    display: flex;
-    padding-top: 80px;
-  }
-}
-.service-details-section .container .service-details-about {
-  display: flex;
-  padding: 40px 40px 0 40px;
-}
-@media (min-width: 1400px) {
-  .service-details-section .container .service-details-about {
-    display: block;
-    padding-right: 30px;
-  }
-}
-.service-details-section .container .service-details-about .about-us-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-}
-@media (min-width: 1400px) {
-  .service-details-section .container .service-details-about .about-us-box {
-    align-items: baseline;
-  }
-}
-.service-details-section .container .service-details-about .about-us-box p {
-  padding-bottom: 30px;
-  font-size: 14px;
-}
-
-.service-details #support-form {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: #4F5955;
-    padding: 30px;
-    border-radius: 3px;
-    margin-top: 30px;
-}
-
-.service-details h5 {
-    color: #F2EDDC;
-    font-size: 22px;
-}
-
-.service-details #support-form p {
-    color: #FFFFFF;
-    z-index: 1;
-}
-
-.service-details .container-support {
-    z-index: 1;
-}
-
-.service-details #support-form .form-background-image {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-color: #4F5955;
-    z-index: 0;
-    height: 120px;
-    width: 160px;
-}
-
-.service-details #support-form .form-input-group {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.service-details #support-form .form-input {
-    width: 100%;
-    padding: 15px 20px;
-    border-radius: 3px;
-    border: 1px solid #ebebeb;
-}
-
-.service-details #support-form .form-button {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
-}
-
-.service-details #support-form .form-button i {
-    font-size: 1.2em;
-    color: inherit;
-}
-
-.service-details #support-form .form-input-error {
-    position: absolute;
-    left: 0;
-    top: 100%;
-}
-
-.service-details #support-form .sucess-message {
-    color: #F2EDDC;
-    font-weight: bold;
-    font-size: 18px;
-}
-.service-details-section .container .service-details {
-  padding: 30px;
-  font-size: 14px;
-}
-@media (min-width: 1400px) {
-  .service-details-section .container .service-details {
-    border-left: 1px solid #ececec;
-    padding: 0 0 0 40px;
-  }
-}
-.service-details-section .container .service-details img {
-  display: none;
-}
-@media (min-width: 1400px) {
-  .service-details-section .container .service-details img {
-    display: block;
-  }
-}
-.service-details-section .container .service-details h4 {
-  font-size: 25px;
-  padding-top: 30px;
-}
-.service-details-section .container .service-details .text-box {
-  display: flex;
-  gap: 10px;
-}
-.service-details-section .container .service-details .text-box i {
-  padding-top: 5px;
-  font-size: 6px;
-  color: var(--color-secondary);
-}
-.service-details-section .container .service-details .achieve {
-  padding-bottom: 30px;
-}
-
-.service-details-form .container {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.service-details-form .container #question-form {
-  padding: 30px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .service-details-form .container #question-form {
-    text-align: left;
-    padding: 0;
-  }
-}*/
 .service-details .container {
     display: flex;
     flex-direction: column;
@@ -2467,7 +2225,7 @@ span.form-input-error.form-invalid-input {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 @media (max-width: 974px) {
@@ -2484,6 +2242,7 @@ span.form-input-error.form-invalid-input {
 #contact-us #container-form h6 {
     color: #D9C3A9;
     padding-top: 80px;
+    text-align: center;
 }
 
 @media (max-width: 974px) {
@@ -2496,6 +2255,7 @@ span.form-input-error.form-invalid-input {
     color: #4F5955;
     width: 450px;
     text-align: center;
+    margin: 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -2507,15 +2267,17 @@ span.form-input-error.form-invalid-input {
 
 #contact-us #container-form p {
     color: #535656;
-    width: 500px;
-    font-size: 16px;
+    width: auto;
+    
+    font-size: 14px;
     font-family: "Poppins", Italic;
     text-align: center;
+    margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 768px) {
     #contact-us #container-form p {
-        width: auto;
+        width: 550px;
     }
 }
 

@@ -1,4 +1,9 @@
+using Onatrix.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<EmailService>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
