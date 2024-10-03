@@ -52,36 +52,34 @@
 		}
 		</div>
 
-		<section class="pagination">
-			<div class="container">
-				@if (currentPage > 1) 
-				{
-					<a href="?page=@(currentPage - 1)" class="change">Prev</a>
-				}
-				else
-				{
-					<span class="change inactive">Prev</span>
-				}
+        <div class="pagination">
+            @if (currentPage > 1) 
+            {
+                <a href="?page=@(currentPage - 1)" class="change">Prev</a>
+            }
+            else
+            {
+                <span class="change inactive">Prev</span>
+            }
 
-				<div class="pages">
-				@for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
-				{
-					<li class="@((i == currentPage) ? "number active" : "number")">
-						<a href="?page=@i">@i</a>
-					</li>
-				}
-				</div>
+            <ul class="pages">
+            @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
+            {
+                <li class="@((i == currentPage) ? "number active" : "number")">
+                    <a href="?page=@i">@i</a>
+                </li>
+            }
+            </ul>
 
-				@if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
-				{
-					<a href="?page=@(currentPage + 1)" class="change">Next</a>
-				}
-				else
-				{
-					<span class="change inactive">Next</span>
-				}
-			</div>
-		</section>
+            @if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
+            {
+                <a href="?page=@(currentPage + 1)" class="change">Next</a>
+            }
+            else
+            {
+                <span class="change inactive">Next</span>
+            }
+        </div>
 	</div>
 </section>
 @await Html.PartialAsync("partials/static/contactInfo.cshtml")
