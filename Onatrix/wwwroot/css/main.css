@@ -722,7 +722,6 @@ h6 {
 #about-us #container-form .sucess-message {
     display: flex;
     justify-content: center;
-    color: #4F5955;
     font-size: 30px;
     font-weight: 600;
     margin-top: 50px;
@@ -1533,22 +1532,30 @@ h6 {
     flex-direction: column;
     position: relative;
     background-color: #4F5955;
-    padding: 30px;
+    padding: 20px;
     border-radius: 3px;
     margin-top: 30px;
+    width: 100%;
 }
 
-.service-details h5 {
+@media (min-width: 1400px) {
+    .service-details #support-form {
+        width: 300px;
+    }
+}
+
+.service-details #support-form h5 {
     color: #F2EDDC;
     font-size: 22px;
 }
 
 .service-details #support-form p {
     color: #FFFFFF;
+    font-size: 14px;
     z-index: 1;
 }
 
-.service-details .container-support {
+.service-details #support-form .container-support {
     z-index: 1;
 }
 
@@ -1597,7 +1604,6 @@ h6 {
 }
 
 .service-details #support-form .sucess-message {
-    color: #F2EDDC;
     font-weight: bold;
     font-size: 18px;
 }
@@ -1898,7 +1904,6 @@ h6 {
 }
 
 .projects #support-form .sucess-message {
-    color: #F2EDDC;
     font-weight: bold;
     font-size: 18px;
 }
@@ -2120,7 +2125,6 @@ h6 {
 }
 
 .project-details #support-form .sucess-message {
-    color: #F2EDDC;
     font-weight: bold;
     font-size: 18px;
 }
@@ -2173,14 +2177,22 @@ footer .container {
 footer .container span {
   color: var(--color-secondary);
 }
+
+
 span.form-input-error {
     display: none;
-    color: red;
+    color: #f53e31 !important;
+    background-color: rgba(109, 117, 115, 0.6);
 }
 
 span.form-input-error.form-invalid-input {
     display: block;
-    font-size: 12px;
+    font-size: 13px;
+}
+
+.sucess-message {
+    color: #28a745 !important;
+    background-color: rgba(109, 117, 115, 0.6);
 }
 
 
@@ -2219,8 +2231,13 @@ span.form-input-error.form-invalid-input {
     margin-bottom: 30px;
 }
 
+.question-form .form-input-error {
+    display: none;
+    color: #f53e31 !important;
+    background-color: transparent;
+}
+
 .question-form .sucess-message {
-    color: #4F5955;
     font-weight: bold;
     font-size: 30px;
     display: flex;
@@ -2316,6 +2333,15 @@ span.form-input-error.form-invalid-input {
     #contact-us #container-form p {
         width: 550px;
     }
+}
+
+#contact-us #container-form .sucess-message {
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 #contact-us form {
